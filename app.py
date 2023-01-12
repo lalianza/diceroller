@@ -36,6 +36,7 @@ def diceroller (n_dices, n_drops, n_times):
                  "int": stats["int"].max(),
                  "wis": stats["wis"].max(),
                  "cha": stats["cha"].max()}
+  stats_final = pd.DataFrame(stats_final, index=["values"])
   return stats, stats_final
 
 st.title("Are you lucky? :sunglasses:")
@@ -51,4 +52,4 @@ times = st.slider(label="Number times to try", min_value=1, max_value=100, step=
 if st.button("get me some stats"):
     df_roll, final_roll = diceroller(dices, drops, times)
     st.dataframe(df_roll)
-    st.table(final_roll)
+    st.dataframe(final_roll)
