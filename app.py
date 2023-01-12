@@ -44,9 +44,9 @@ st.markdown("""Thry this to build your D&D character,
 chose how many dices you will roll, how many drops and how many times,
 them see if you are lucky""")
 
-dices = st.slider(label="Number of dices to roll", min_value=1, max_value=100, step=1, key=int)
-drops = st.slider(label="Number of dices to drop", min_value=1, max_value=100, step=1, key=int, help="must be higher than rolled dices")
-times = st.slider(label="Number times to try", min_value=1, max_value=100, step=1, key=int)
+dices = st.slider(label="Number of dices to roll", min_value=1, max_value=100, step=1)
+drops = st.slider(label="Number of dices to drop", min_value=1, max_value=100, step=1, help="must be higher than rolled dices")
+times = st.slider(label="Number times to try", min_value=1, max_value=100, step=1)
 
 if st.button("get me some stats"):
     df_roll, final_roll = diceroller(dices, drops, times)
